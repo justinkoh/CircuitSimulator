@@ -1,0 +1,6 @@
+* C:\Users\wendy\OneDrive\Documents\LTspiceXVII\examples\RLsine.asc
+R1 N002 N001 1k
+V1 N001 0 SINE(0 1 100)
+L1 N002 0 1m
+.tran 0 0.01 0 0.1u
+.end

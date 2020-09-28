@@ -1,0 +1,13 @@
+* C:\Users\wendy\OneDrive\Documents\LTspiceXVII\examples\multiple voltage source one node.asc
+V1 N001 P001 10
+V2 N001 N004 5
+R1 N001 0 10
+R2 N004 0 20
+R3 N004 N003 5
+R4 N003 0 15
+V3 N001 N002 4
+R5 N003 N002 16
+R6 P001 0 2
+.tran 0 1 0 1
+.backanno
+.end

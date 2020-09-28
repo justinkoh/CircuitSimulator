@@ -1,0 +1,9 @@
+* C:\Users\wendy\OneDrive\Documents\LTspiceXVII\examples\Draft4.asc
+R1 N001 0 12
+I1 N001 N002 SINE(0 1 10)
+I2 N003 N002 SINE(0 2 6)
+R2 N002 N001 4
+R3 N003 0 5
+.tran 0 1 0 1m
+.backanno
+.end

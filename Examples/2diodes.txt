@@ -1,0 +1,8 @@
+* C:\Users\wendy\OneDrive\Documents\LTspiceXVII\examples\diodetest.asc
+V1 P001 0 10
+R1 N001 P001 5
+D1 P002 N002 D
+R2 N002 0 1
+D2 N001 P002 D
+.tran 0 1 0 1
+.end
