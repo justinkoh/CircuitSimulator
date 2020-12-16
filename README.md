@@ -1,6 +1,5 @@
-Circuit Simulator
-A software package that performs a transient simulation of a circuit, like LTspice. The main
-elements of such a system are described below.
+A circuit simulator software package that performs a transient simulation of a circuit, like LTspice. The main
+elements of such the system are described below.
 
 ### Parse the netlist file
 The netlist is described in a file using a reduced SPICE format.
