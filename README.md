@@ -82,7 +82,7 @@ and the current through each component at every instant in the simulation. The o
 CSV format where the columns are the nodes and components and the rows are the instances in
 time. We used GNUplot to plot out the results
 
-### Added support for non-linear components (advanced)
+### Added support for non-linear components
 When the circuit contains non-linear components, like diodes, there is no analytic solution. Instead
 a numerical solution is calculated using the iterative Newton Raphson method.
 The component is converted to a linear approximation (a Thevenin equivalent) by guessing the
