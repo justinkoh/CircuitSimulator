@@ -1,11 +1,9 @@
-# Option 3: Circuit Simulator
-
-Write a software package that performs a transient simulation of a circuit, like LTspice. The main
+Circuit Simulator
+A software package that performs a transient simulation of a circuit, like LTspice. The main
 elements of such a system are described below.
 
 ### Parse the netlist file
-The netlist should be described in a file using a reduced SPICE format, which will be provided. You
-will need to read the file and store the circuit in a suitable data structure.
+The netlist is described in a file using a reduced SPICE format, which will be provided.
 
 ### Set up the simulation
 A transient simulation takes place by calculating the node voltages at each successive instant in
@@ -23,7 +21,7 @@ capacitor has a voltage proportional to the integral of the current through the 
 𝑣𝐶𝐴𝑃(𝑡) =∫𝑖(𝑡)𝐶𝑑𝑡
 ```
 ### Construct and solve the conductance matrix
-You have seen how nodal analysis can be performed by writing an equation for each node that
+We see how nodal analysis can be performed by writing an equation for each node that
 satisfies Kirchoff’s current law, then solving these equations simultaneously to find the unknown
 node voltages. Such systems of linear equations can be solved systematically by writing them in
 matrix form and solving for the vector of unknowns.
@@ -43,9 +41,7 @@ To construct the conductance matrix, inductors are treated as current sources si
 cannot change instantaneously and it is effectively fixed during each simulation iteration. Similarly,
 capacitors are treated as voltage sources (discussed later) since their voltage cannot change
 instantaneously.
-The solution is found by calculating the inverse of conductance matrix. This is complex but common
-operation in computing, so it makes sense to use a library, but you must justify your selection of a
-library and how you have used it in your report.
+The solution is found by calculating the inverse of conductance matrix.
 
 ### Process voltage sources
 Voltage sources must be treated specially since the conductance of an ideal voltage source is
@@ -82,9 +78,9 @@ also a row that describes KCL for the supernode.
 
 ### Write the output
 The results of the simulation are reported by creating a file describing the voltage at each node
-and the current through each component at every instant in the simulation. Write the output in
+and the current through each component at every instant in the simulation. The output is written in
 CSV format where the columns are the nodes and components and the rows are the instances in
-time. Use the MATLAB script provided on blackboard to plot the results.
+time. We used GNUplot to plot out the results
 
 ### Add support for non-linear components (advanced)
 When the circuit contains non-linear components, like diodes, there is no analytic solution. Instead
@@ -95,10 +91,3 @@ analysis is performed as usual. The results of the nodal analysis are used to fi
 difference, and from that a new linear approximation. The process is repeated until the node
 voltages stop changing between each iteration and converge on the solution.
 
-### Evaluation
-Your solution should be evaluated against the following criteria:
-1. Accuracy: compare the outputs to pen and paper solutions. For simple circuits you should be
-able to calculate an exact solution as a reference. You can also compare with LTspice.
-2. Efficiency: find how long the simulation takes and, by estimating the power consumption of
-your computer, the amount of energy needed. How does it scale with the number of nodes
-in the circuit? Are there any implementation choices that affect the efficiency?
