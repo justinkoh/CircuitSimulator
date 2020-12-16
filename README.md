@@ -3,7 +3,7 @@ A software package that performs a transient simulation of a circuit, like LTspi
 elements of such a system are described below.
 
 ### Parse the netlist file
-The netlist is described in a file using a reduced SPICE format, which will be provided.
+The netlist is described in a file using a reduced SPICE format.
 
 ### Set up the simulation
 A transient simulation takes place by calculating the node voltages at each successive instant in
